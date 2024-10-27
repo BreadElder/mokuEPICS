@@ -1,0 +1,88 @@
+# Device Admin PVs
+record(stringin, "$(P):DEV:CAL_DATE") {
+    field(DESC, "Date of the last calibration")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(PINI, "1")
+    field(INP,  "@mokuEPICS $(PORT) getCalDate")
+}
+
+record(longin, "$(P):DEV:FIRMWARE") {
+    field(DESC, "Firmware Version of Moku")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(INP,  "@mokuEPICS $(PORT) getfwVer")
+}
+
+record(stringin, "$(P):DEV:VERSION") {
+    field(DESC, "Moku API Server Version")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(INP,  "@mokuEPICS $(PORT) getapiVer")
+}
+
+record(stringin, "$(P):DEV:HARDWARE") {
+    field(DESC, "Moku Model")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(INP,  "@mokuEPICS $(PORT) gethwMod")
+    field(FLNK, "$(P):DEV:_MODEL_MISMATCH_CALC.PROC CP")
+}
+
+record(stringout, "$(P):DEV:MODEL_SETTING") {
+    field(DESC, "Model expected by EPICS")
+    field(VAL, "$(MODEL)")
+}
+
+record(scalcout, "$(P):DEV:_MODEL_MISMATCH_CALC") {
+    field(DESC, "Determine if the names match")
+    field(CALC, "(AA==BB)?0:1")
+    field(INAA, "$(P):DEV:HARDWARE CP")
+    field(INBB, "$(P):DEV:MODEL_SETTING CP")
+}
+
+record(bi, "$(P):DEV:MODEL_MISMATCH") {
+    field(DESC, "Model is not what is expected")
+    field(VAL,  "1")
+    field(ZNAM, "GOOD")                  field(ZSV, "NO_ALARM")
+    field(ONAM, "HARDWARE MISMATCH")     field(OSV, "MAJOR")
+    field(INP, "$(P):DEV:_MODEL_MISMATCH_CALC CP")
+}
+
+record(stringin, "$(P):DEV:SERIAL_NUM") {
+    field(DESC, "Hardware Serial Number")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(INP,  "@mokuEPICS $(PORT) getSerNo")
+}
+
+record(stringin, "$(P):DEV:NAME") {
+    field(DESC, "Device Name")
+    field(DTYP, "Python Device")
+    field(SCAN, "1 second")
+    field(INP,  "@mokuEPICS $(PORT) getName")
+}
+
+# External Reference PVs
+# record(bi, "$(P):DEV:REFCLK_RBV") {
+#     field(DESC, "10MHz CLK Status")
+#     field(VAL,  "0")
+#     field(ZNAM, "DISABLED")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "ENABLED")     field(OSV, "NO_ALARM")
+#     field(INP,  "@mokuEPICS $(PORT) getExtnClk")
+# }
+
+# record(bo, "$(P):DEV:REFCLK") {
+#     field(DESC, "10MHz CLK Status")
+#     field(VAL,  "v0alue")
+#     field(ZNAM, "DISABLED")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "ENABLED")     field(OSV, "NO_ALARM")
+#     field(HIGH, "0")
+#     field(OUT,  "@mokuEPICS $(PORT) setExtnClk")
+# }
+
+
+# File Browser Setup
+#TODO
+
+

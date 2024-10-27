@@ -1,0 +1,57 @@
+file "db/moku.template" {
+    {
+        P = "MOKUIOC",
+        PORT = "MOKUPORT"
+
+        # MOKU PRO
+        MODEL = "Moku:Pro"
+
+        # MOKU LAB
+        #MODEL = "Moku:Lab"
+
+        # MOKU GO
+        #MODEL = "Moku:Go"
+    }
+}
+
+file "db/mokuOscilloscope.template" {
+    {
+        P = "MOKUIOC",
+        PORT = "MOKUPORT",
+
+
+    }
+}
+
+file "db/mokuOscilloscopeChan.template" {
+    pattern {P,         PORT,       CH,     RANGE_1,    RANGE_2,    RANGE_3}
+            # MOKU PRO
+            {"MOKUIOC", "MOKUPORT", "1",    "400mVpp",  "4Vpp",     "40Vpp"    }
+            {"MOKUIOC", "MOKUPORT", "2",    "400mVpp",  "4Vpp",     "40Vpp"    }
+            {"MOKUIOC", "MOKUPORT", "3",    "400mVpp",  "4Vpp",     "40Vpp"    }
+            {"MOKUIOC", "MOKUPORT", "4",    "400mVpp",  "4Vpp",     "40Vpp"    }
+
+            # MOKU LAB
+            #{"MOKUIOC", "MOKUPORT", "1",    "1Vpp",     "10Vpp",    "NA"}
+            #{"MOKUIOC", "MOKUPORT", "2",    "1Vpp",     "10Vpp",    "NA"}
+
+            # MOKU GO
+            #{"MOKUIOC", "MOKUPORT", "1",    "10Vpp",    "50Vpp",    "NA"}
+            #{"MOKUIOC", "MOKUPORT", "2",    "10Vpp",    "50Vpp",    "NA"}
+
+}
+
+file "db/mokuSpecAn.template" {
+    {
+        P = "MOKUIOC",
+        PORT = "MOKUPORT"
+    }
+}
+
+file "db/mokuSpecAnChan.template" {
+    pattern {   P,          PORT,       CH}
+            {   "MOKUIOC", "MOKUPORT", "1"}
+            {   "MOKUIOC", "MOKUPORT", "2"}
+            {   "MOKUIOC", "MOKUPORT", "3"}
+            {   "MOKUIOC", "MOKUPORT", "4"}
+}

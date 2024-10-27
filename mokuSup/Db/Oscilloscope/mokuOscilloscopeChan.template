@@ -1,0 +1,67 @@
+record(bo, "$(P):OSC:CH$(CH):DISABLE") {
+    field(DESC, "Disable the channel")
+    field(DTYP, "Python Device")
+    field(VAL,  "1")
+    field(ZNAM, "ENABLED")    field(ZSV, "NO_ALARM")
+    field(ONAM, "DISABLE")     field(OSV, "NO_ALARM")
+    field(HIGH, "0")
+    field(OUT,  "@mokuEPICS $(PORT) setOscDisableCh$(CH)") #TODO
+}
+
+record(waveform, "$(P):OSC:CH$(CH):DATA") {
+    field(DESC, "Data from Channel $(CH)")
+    field(DTYP, "Python Device")
+    field(SCAN, ".1 second")
+    field(NELM, "1024")
+    field(FTVL, "FLOAT")
+
+    field(INP, "@mokuEPICS $(PORT) getOscDataCh$(CH)")
+}
+
+# record(bo, "$(P):OSC:CH$(CH):IMPEDANCE") {
+#     field(DESC, "Set the impedance of CH$(CH)")
+#     field(VAL,  "0")
+#     field(ZNAM, "50 Ohm")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "1 MOhm")     field(OSV, "NO_ALARM")
+#     field(OUT,  "output link") #TODO
+# }
+
+# record(bi, "$(P):OSC:CH$(CH):IMPEDANCE_RBV") {
+#     field(DESC, "Readback of CH$(CH) impedance")
+#     field(VAL,  "value")
+#     field(ZNAM, "50 Ohm")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "1M Ohm")     field(OSV, "NO_ALARM")
+#     field(INP,  "input link") #TODO
+# }
+
+# record(bo, "$(P):OSC:CH$(CH):COUPLING") {
+#     field(DESC, "Set the coupling of CH$(CH)")
+#     field(VAL,  "value")
+#     field(ZNAM, "DC")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "AC")     field(OSV, "NO_ALARM")
+#     field(OUT,  "output link") #TODO
+# }
+
+# record(bi, "$(P):OSC:CH$(CH):COUPLING_RBV") {
+#     field(DESC, "Reacback coupling of CH$(CH)")
+#     field(VAL,  "value")
+#     field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+#     field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+#     field(INP,  "input link")
+# }
+
+# record(mbbo, "$(P):OSC:CH$(CH):RANGE") {
+#     field(DESC, "Input range of CH$(CH)")
+#     field(OUT,  "output_link") #TODO
+#     field(ZRST, "$(RANGE_1)")         field(ZRVL, "1")
+#     field(ONST, "$(RANGE_2)")         field(ONVL, "2")
+#     field(TWST, "$(RANGE_3)")         field(TWVL, "3")
+# }
+
+# record(mbbi, "$(P):OSC:CH$(CH):RANGE_RBV") {
+#     field(DESC, "Reacback of input range")
+#     field(INP,  "input_link") #TODO
+#     field(ZRST, "$(RANGE_1)")         field(ZRVL, "1")
+#     field(ONST, "$(RANGE_2)")         field(ONVL, "2")
+#     field(TWST, "$(RANGE_3)")         field(TWVL, "3")
+# }

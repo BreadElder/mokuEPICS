@@ -1,0 +1,167 @@
+record(mbbo, "$(P):OSC:TRIG_SOURCE") {
+    field(DESC, "description")
+    field(OUT,  "output_link")
+    field(ZRST, "zero_string")        field(ZRVL, "zero_value")
+    field(ONST, "one_string")         field(ONVL, "one_value")
+    field(TWST, "two_string")         field(TWVL, "two_value")
+    field(THST, "three_string")       field(THVL, "three_value")
+    field(FRST, "four_string")        field(FRVL, "four_value")
+    field(FVST, "five_string")        field(FVVL, "five_value")
+    field(SXST, "six_string")         field(SXVL, "six_value")
+    field(SVST, "seven_string")       field(SVVL, "seven_value")
+    field(EIST, "height_string")      field(EIVL, "heigt_value")
+    field(NIST, "nine_string")        field(NIVL, "nine_value")
+    field(TEST, "ten_string")         field(TEVL, "ten_value")
+    field(ELST, "eleven_string")      field(ELVL, "eleven_value")
+    field(TVST, "twelve_string")      field(TVVL, "twelve_value")
+    field(TTST, "thirteen_string")    field(TTVL, "thirteen_value")
+    field(FTST, "fourteen_string")    field(FTVL, "fourteen_value")
+    field(FFST, "fifteen_string")     field(FFVL, "fifteen_value")
+}
+
+record(ao, "$(P):OSC:TRIG:LVL") {
+    field(DESC, "description")
+    field(PREC, "3")
+    field(EGU,  "V")
+    field(DRVL, "$(TRIG_LVL_H)")
+    field(DRVH, "$(TRIG_LVL_L)")
+    field(VAL,  "0.000")
+}
+
+record(bo, "$(P):OSC:TRIG:MODE") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(HIGH, "seconds_to_hold_high_state")
+    field(OUT,  "output link")
+}
+
+record(mbbo, "$(P):OSC:TRIG:EDGE") {
+    field(DESC, "description")
+    field(OUT,  "output_link")
+    field(ZRST, "zero_string")        field(ZRVL, "zero_value")
+    field(ONST, "one_string")         field(ONVL, "one_value")
+    field(TWST, "two_string")         field(TWVL, "two_value")
+    field(THST, "three_string")       field(THVL, "three_value")
+    field(FRST, "four_string")        field(FRVL, "four_value")
+    field(FVST, "five_string")        field(FVVL, "five_value")
+    field(SXST, "six_string")         field(SXVL, "six_value")
+    field(SVST, "seven_string")       field(SVVL, "seven_value")
+    field(EIST, "height_string")      field(EIVL, "heigt_value")
+    field(NIST, "nine_string")        field(NIVL, "nine_value")
+    field(TEST, "ten_string")         field(TEVL, "ten_value")
+    field(ELST, "eleven_string")      field(ELVL, "eleven_value")
+    field(TVST, "twelve_string")      field(TVVL, "twelve_value")
+    field(TTST, "thirteen_string")    field(TTVL, "thirteen_value")
+    field(FTST, "fourteen_string")    field(FTVL, "fourteen_value")
+    field(FFST, "fifteen_string")     field(FFVL, "fifteen_value")
+}
+
+record(mbbi, "$(P):OSC:TRIG:EDGE_RBV") {
+    field(DESC, "description")
+    field(INP,  "input_link")
+    field(ZRST, "zero_string")        field(ZRVL, "zero_value")
+    field(ONST, "one_string")         field(ONVL, "one_value")
+    field(TWST, "two_string")         field(TWVL, "two_value")
+    field(THST, "three_string")       field(THVL, "three_value")
+    field(FRST, "four_string")        field(FRVL, "four_value")
+    field(FVST, "five_string")        field(FVVL, "five_value")
+    field(SXST, "six_string")         field(SXVL, "six_value")
+    field(SVST, "seven_string")       field(SVVL, "seven_value")
+    field(EIST, "height_string")      field(EIVL, "heigt_value")
+    field(NIST, "nine_string")        field(NIVL, "nine_value")
+    field(TEST, "ten_string")         field(TEVL, "ten_value")
+    field(ELST, "eleven_string")      field(ELVL, "eleven_value")
+    field(TVST, "twelve_string")      field(TVVL, "twelve_value")
+    field(TTST, "thirteen_string")    field(TTVL, "thirteen_value")
+    field(FTST, "fourteen_string")    field(FTVL, "fourteen_value")
+    field(FFST, "fifteen_string")     field(FFVL, "fifteen_value")
+}
+
+record(bo, "$(P):OSC:TRIG:POLARITY") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(HIGH, "seconds_to_hold_high_state")
+    field(OUT,  "output link")
+}
+
+
+record(ao, "$(P):OSC:TRIG:WIDTH") {
+    field(DESC, "description")
+    field(PREC, "3")
+    field(EGU,  "Volts")
+    field(DRVL, "-10")
+    field(DRVH, "+10")
+    field(VAL,  "0.000")
+}
+
+record(longout, "$(P):OSC:TRIG:NTH_EVENT") {
+    field(DESC, "description")
+    field(DRVL, "5")
+    field(DRVH, "100")
+    field(EGU,  "Volts")
+    field(OUT,  "OUTLINK")
+}
+
+record(bi, "$(P):OSC:TRIG:NTH_EVENT_RBV") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(INP,  "input link")
+}
+
+record(longout, "$(P):OSC:TRIG:HOLDOFF") {
+    field(DESC, "description")
+    field(DRVL, "5")
+    field(DRVH, "100")
+    field(EGU,  "Volts")
+    field(OUT,  "OUTLINK")
+}
+
+record(ao, "$(P):OSC:TRIG:HYSTERESIS") {
+    field(DESC, "description")
+    field(PREC, "3")
+    field(EGU,  "Volts")
+    field(DRVL, "-10")
+    field(DRVH, "+10")
+    field(VAL,  "0.000")
+}
+
+record(bo, "$(P):OSC:TRIG:AUTO_SENSITIVITY") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(HIGH, "seconds_to_hold_high_state")
+    field(OUT,  "output link")
+}
+
+record(bi, "$(P):OSC:TRIG:AUTO_SENSITIVITY_RBV") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(INP,  "input link")
+}
+
+record(bo, "$(P):OSC:TRIG:NOISE_REJECT") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(HIGH, "seconds_to_hold_high_state")
+    field(OUT,  "output link")
+}
+
+record(bo, "$(P):OSC:TRIG:HF_REJECT") {
+    field(DESC, "description")
+    field(VAL,  "value")
+    field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM MINOR MAJOR")
+    field(ONAM, "one_name")     field(OSV, "NO_ALARM MINOR MAJOR")
+    field(HIGH, "seconds_to_hold_high_state")
+    field(OUT,  "output link")
+}

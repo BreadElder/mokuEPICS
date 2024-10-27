@@ -1,0 +1,9 @@
+record(waveform, "$(P):SPECAN:CH$(CH):DATA") {
+    field(DESC, "Data from Channel $(CH)")
+    field(DTYP, "Python Device")
+    field(SCAN, ".1 second")
+    field(NELM, "1024")
+    field(FTVL, "FLOAT")
+
+    field(INP, "@mokuEPICS $(PORT) getSpecAnDataCh$(CH)")
+}

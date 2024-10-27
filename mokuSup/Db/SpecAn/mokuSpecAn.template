@@ -1,0 +1,18 @@
+record(bo, "$(P):SPECAN:SET_INST") {
+    field(DESC, "Switch to the spec An")
+    field(DTYP, "Python Device")
+    field(VAL,  "0")
+    field(ZNAM, "NA")    field(ZSV, "NO_ALARM")
+    field(ONAM, "Change")     field(OSV, "NO_ALARM")
+    field(HIGH, "1")
+    field(OUT,  "@mokuEPICS $(PORT) chngInstSpecAn")
+}
+
+record(waveform, "$(P):SPECAN:FREQ:DATA") {
+    field(DESC, "Frequency values for the specan")
+    field(DTYP, "Python Device")
+    field(SCAN, ".1 second")
+    field(NELM, "1024")
+    field(FTVL, "FLOAT")
+    field(INP, "@mokuEPICS $(PORT) getOscDataFreq")
+}

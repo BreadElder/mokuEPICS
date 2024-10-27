@@ -1,0 +1,94 @@
+record(bo, "$(P):OSC:SET_INST") {
+    field(DESC, "Switch to the spec An")
+    field(DTYP, "Python Device")
+    field(VAL,  "0")
+    field(ZNAM, "NA")    field(ZSV, "NO_ALARM")
+    field(ONAM, "Change")     field(OSV, "NO_ALARM")
+    field(HIGH, "1")
+    field(OUT,  "@mokuEPICS $(PORT) chngInstOsc")
+}
+
+record(bo, "$(P):OSC:SET_DEFAULTS") {
+    field(DESC, "Set to default settings")
+    field(VAL,  "1")
+    field(ZNAM, "CUSTOM SETTINGS")    field(ZSV, "NO_ALARM")
+    field(ONAM, "DEFAULT SETTINGS")     field(OSV, "NO_ALARM")
+    field(HIGH, "0")
+    field(OUT,  "output link") #TODO
+}
+
+# record(bo, "$(P):OSC:SYNC_OUT_PHASE") {
+#     field(DESC, "description")
+#     field(VAL,  "0")
+#     field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "one_name")     field(OSV, "NO_ALARM")
+#     field(HIGH, "seconds_to_hold_high_state")
+#     field(OUT,  "output link")
+# }
+
+# record(bo, "$(P):OSC:ROLL_MODE") {
+#     field(DESC, "description")
+#     field(VAL,  "0")
+#     field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "one_name")     field(OSV, "NO_ALARM")
+#     field(HIGH, "seconds_to_hold_high_state")
+#     field(OUT,  "output link")
+# }
+
+# record(bi, "$(P):OSC:ROLL_MODE_RBV") {
+#     field(DESC, "description")
+#     field(VAL,  "0")
+#     field(ZNAM, "zero_name")    field(ZSV, "NO_ALARM")
+#     field(ONAM, "one_name")     field(OSV, "NO_ALARM")
+#     field(INP,  "input link")
+# }
+
+record(waveform, "$(P):OSC:TIME:DATA") {
+    field(DESC, "Time values for the scope")
+    field(DTYP, "Python Device")
+    field(SCAN, ".1 second")
+    field(NELM, "1024")
+    field(FTVL, "FLOAT")
+    field(INP, "@mokuEPICS $(PORT) getOscDataTime")
+}
+
+record(ao, "$(P):OSC:TIME:BASE_LEFT") {
+    field(DESC, "Timebase left")
+    field(DTYP, "Python Device")
+    field(PREC, "3")
+    field(EGU,  "s")
+    field(DRVL, "-10")
+    field(DRVH, "+10")
+    field(VAL,  "-0.01")
+    field(OUT, "@mokuEPICS $(PORT) setOscTimebaseLeft")
+}
+
+record(ao, "$(P):OSC:TIME:BASE_RIGHT") {
+    field(DESC, "Timebase Right")
+    field(DTYP, "Python Device")
+    field(PREC, "3")
+    field(EGU,  "s")
+    field(DRVL, "-10")
+    field(DRVH, "+10")
+    field(VAL,  "0.01")
+    field(OUT, "@mokuEPICS $(PORT) setOscTimebaseRight")
+}
+
+# record(ai, "$(P):OSC:OFFSET_RBV") {
+#     field(DESC, "description")
+#     field(DTYP, "Soft Channel stream")
+#     field(SCAN, ".1 second 1 second I/O Intr Event Passive")
+#     field(INP,  "input link")
+# }
+
+# record(ai, "$(P):OSC:SPAN_RBV") {
+#     field(DESC, "description")
+#     field(DTYP, "Soft Channel stream")
+#     field(SCAN, ".1 second 1 second I/O Intr Event Passive")
+#     field(INP,  "input link")
+# }
+
+
+
+
+

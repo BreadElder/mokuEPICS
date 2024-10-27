@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1259</width>
+    <height>783</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>DEVICE</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="1">
+       <widget class="QELabel" name="qelabel_5">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:MODEL_SETTING</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QELabel" name="qelabel_4">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:CAL_DATE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel">
+        <property name="labelText" stdset="0">
+         <string>MODEL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_4">
+        <property name="labelText" stdset="0">
+         <string>LAST CAL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_6">
+        <property name="labelText" stdset="0">
+         <string>MODEL MATCH</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QELabel" name="qelabel_3">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:VERSION</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QELabel" name="qelabel">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:HARDWARE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_3">
+        <property name="labelText" stdset="0">
+         <string>API VERSION</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_5">
+        <property name="labelText" stdset="0">
+         <string>EPICS MODEL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_2">
+        <property name="labelText" stdset="0">
+         <string>FIRMWARE VERSION</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QELabel" name="qelabel_2">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:FIRMWARE</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QESubstitutedLabel" name="qesubstitutedlabel_7">
+        <property name="labelText" stdset="0">
+         <string>SERIAL NUMBER</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QELabel" name="qelabel_6">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:MODEL_MISMATCH</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QELabel" name="qelabel_7">
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:DEV:SERIAL_NUM</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>CONTROL</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="VCLApplyPushButton" name="vclapplypushbutton">
+        <property name="text">
+         <string>SWITCH INST</string>
+        </property>
+        <property name="variable" stdset="0">
+         <string>MOKUIOC:SPECAN:SET_INST</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>DATA</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QEPlotter" name="qeplotter">
+        <property name="DataVariableX" stdset="0">
+         <string>MOKUIOC:SPECAN:FREQ:DATA</string>
+        </property>
+        <property name="DataVariableA" stdset="0">
+         <string>MOKUIOC:SPECAN:CH1:DATA</string>
+        </property>
+        <property name="DataVariableB" stdset="0">
+         <string>MOKUIOC:SPECAN:CH2:DATA</string>
+        </property>
+        <property name="DataVariableC" stdset="0">
+         <string>MOKUIOC:SPECAN:CH3:DATA</string>
+        </property>
+        <property name="DataVariableD" stdset="0">
+         <string>MOKUIOC:SPECAN:CH4:DATA</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QELabel</class>
+   <extends>QLabel</extends>
+   <header>QELabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEPlotter</class>
+   <extends>QEFrame</extends>
+   <header>QEPlotter.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEPushButton</class>
+   <extends>QPushButton</extends>
+   <header>QEPushButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QESubstitutedLabel</class>
+   <extends>QLabel</extends>
+   <header>QESubstitutedLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEFrame</class>
+   <extends>QFrame</extends>
+   <header>QEFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VCLApplyPushButton</class>
+   <extends>QEPushButton</extends>
+   <header>VCLApplyPushButton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
