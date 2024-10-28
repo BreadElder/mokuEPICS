@@ -1,4 +1,8 @@
-*/bin
-*/db
-*/dbd
-
+# things added by make
+bin/
+db/
+dbd/
+python3.9/
+*O.Common*
+*O.linux-x86_64*
+*envPaths
